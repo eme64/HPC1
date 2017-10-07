@@ -9,10 +9,14 @@ CPPFLAGS += -Wno-int-in-bool-context  # Eigen...
 .DEFAULT_GOAL := diff
 .PHONY: clean
 
-OBJ = src/diff.o
+OBJ1 = src/diff.o
+OBJ2 = src/bench.o
 
-diff: $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o diff -lm
+diff: $(OBJ1)
+	$(CC) $(CFLAGS) $(OBJ1) -o diff -lm
+	
+bench: $(OBJ2)
+	$(CC) $(CFLAGS) $(OBJ2) -o bench -lm
 
 # special target that generates an object file for a given source file (.cpp)
 %.o: %.cpp
@@ -20,5 +24,5 @@ diff: $(OBJ)
 	
 # clean up target, called like this: make clean
 clean:
-	rm -f *~ diff $(OBJ)
+	rm -f *~ diff bench $(OBJ1) $(OBJ2)
 
