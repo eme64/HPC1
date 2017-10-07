@@ -1,0 +1,28 @@
+# specify the compiler you want to use
+CC = g++
+
+# some compilation flags are defined here
+CXXFLAGS = -std=c++11 -g
+# here we add the include path that is required to find the myHeader.h
+CXXFLAGS += -Iinclude/
+
+# specify the default compilation goal (the executable main)
+.DEFAULT_GOAL := matmul
+# specifies that we can always execute the "clean" target, even if there might
+# be another file in the directory that has an identical name
+.PHONY := clean
+
+# source files we want to generate object-code for (called a .o file)
+OBJ = src/matmul.o
+
+# main target
+matmul: $(OBJ)
+	$(CC) $(CXXFLAGS) $(OBJ) -o matmul
+
+# special target that generates an object file for a given source file (.cpp)
+%.o: %.cpp
+	$(CC) $(CXXFLAGS) -c $^ -o $@
+
+# clean up target, called like this: make clean
+clean:
+	rm -f *~ matmul $(OBJ)
