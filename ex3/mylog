@@ -1,0 +1,104 @@
+Sender: LSF System <lsfadmin@eu-c7-046-10>
+Subject: Job 51277037: <./mc_omp 0> in cluster <euler> Done
+
+Job <./mc_omp 0> was submitted from host <eu-login-07> by user <peterem> in cluster <euler> at Fri Oct 13 13:14:55 2017.
+Job was executed on host(s) <24*eu-c7-046-10>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Fri Oct 13 13:18:30 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex3> was used as the working directory.
+Started at Fri Oct 13 13:18:30 2017.
+Terminated at Fri Oct 13 13:18:32 2017.
+Results reported at Fri Oct 13 13:18:32 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./mc_omp 0
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   3.04 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   25 sec.
+    Turnaround time :                            217 sec.
+
+The output (if any) follows:
+
+id: 2
+id: 1
+id: 3
+id: 0
+res:  3.1414998334762121
+ref:  3.1415926535897931
+error: 9.28201e-05
+time: 0.755271 s
+num_samples: 100000000
+should num samples: 100000000
+Sender: LSF System <lsfadmin@eu-c7-019-10>
+Subject: Job 51277980: <./mc_omp 0> in cluster <euler> Done
+
+Job <./mc_omp 0> was submitted from host <eu-login-07> by user <peterem> in cluster <euler> at Fri Oct 13 13:29:26 2017.
+Job was executed on host(s) <24*eu-c7-019-10>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Fri Oct 13 13:32:56 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex3> was used as the working directory.
+Started at Fri Oct 13 13:32:56 2017.
+Terminated at Fri Oct 13 13:33:08 2017.
+Results reported at Fri Oct 13 13:33:08 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./mc_omp 0
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   60.63 sec.
+    Max Memory :                                 2 MB
+    Average Memory :                             2.00 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24574.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                4
+    Run time :                                   13 sec.
+    Turnaround time :                            222 sec.
+
+The output (if any) follows:
+
+e: 0.000019, t: 3.782941, n: 1
+e: 0.000061, t: 1.415083, n: 2
+e: 0.000113, t: 0.888941, n: 3
+e: 0.000266, t: 0.664748, n: 4
+e: 0.000266, t: 0.536805, n: 5
+e: 0.000249, t: 0.444052, n: 6
+e: 0.000269, t: 0.382277, n: 7
+e: 0.000215, t: 0.332661, n: 8
+e: 0.000171, t: 0.303110, n: 9
+e: 0.000162, t: 0.267603, n: 10
+e: 0.000119, t: 0.244124, n: 11
+e: 0.000051, t: 0.222512, n: 12
+e: 0.000014, t: 0.203567, n: 13
+e: 0.000026, t: 0.171892, n: 14
+e: 0.000083, t: 0.160814, n: 15
+e: 0.000106, t: 0.150262, n: 16
+e: 0.000091, t: 0.141431, n: 17
+e: 0.000132, t: 0.134056, n: 18
+e: 0.000034, t: 0.133457, n: 19
+e: 0.000023, t: 0.120153, n: 20
+e: 0.000067, t: 0.114792, n: 21
+e: 0.000084, t: 0.109899, n: 22
+e: 0.000048, t: 0.106145, n: 23
+e: 0.000010, t: 0.101327, n: 24
