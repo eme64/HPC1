@@ -42,23 +42,27 @@ int main(int argc, char *argv[])
 
 		// TODO 4: parallelize using OpenMP
 		double res = 0.;
-		int count_samples = 0;
 		omp_set_num_threads(n_threads);
-		#pragma omp parallel reduction(+:res) reduction(+:count_samples)
+		#pragma omp parallel reduction(+:res)
 		{
 			//printf("id: %d\n", omp_get_thread_num());
 			double x;
 			// init random variable:
 			std::default_random_engine gen(omp_get_thread_num()); // generator with given seed
 			std::uniform_real_distribution<double> uni(a,b);
-			
+			// counter used to count workload of this thread
+			// int counter = 0; 
+
 			#pragma omp for
 			for (unsigned long i = 0; i < n; i++) {
 				x = uni(gen);
 				res += f(x);
-				count_samples += 1;
+				// one more to count:
+				//counter++;
 			}
 			res *= h;
+			// output interval counted by counter
+			//printf("id: %d, w: %d\n", omp_get_thread_num(), counter);
 		}
 		double t1 = get_wtime();
 		printf("e: %f, t: %f, n: %d\n", std::abs(res-ref), t1-t0, n_threads);
