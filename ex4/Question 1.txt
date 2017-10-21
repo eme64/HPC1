@@ -1,0 +1,24 @@
+------------------------------------- a)
+We assume a cold cache.
+
+Therefore each of the A and B entries have to be loaded -> 2N
+Also A changes value twice in the while loop, but we only need to write it back
+once, also we need to write back C.
+
+So we read 2N and write 2N, 4Bytes per float. Total 16Byte * N memory access.
+
+Totally we do 3 adds and 3 multiplies per i, so total 6N Flops.
+
+=> I(N) = 6N / 16N = 0.375
+
+------------------------------------- b)
+
+IB * beta(mem bandwidth) = pi (peak performance)
+
+=> IB = 409.7 GFlop/s / 34GB/s = 12.05 Flop/Byte
+below this it would be mem-bound.
+
+I(N, P) = (2+2P)N / 16N =!= IB
+
+=> P = 95.4
+=> less or equal 95 !

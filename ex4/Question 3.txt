@@ -1,0 +1,28 @@
+We will use the same method as in Question 2.
+
+extern double work(int i);
+void test(double *a, int N)
+{
+	int pos = 0;
+	#pragma omp parallel
+	{
+		do{
+			// grab new item
+			int my_item;
+			#pragma omp atomic capture
+			{
+				my_item = pos++;
+			}
+		
+			// check if still valid
+			if(my_item >= N){break;} // no work left
+			
+			A[my_item] = work(i);
+			
+		}while(true)
+	}
+	
+	// each thread will have overshot at the end, so claimed one pos too many:
+	pos = pos - omp_get_num_threads();
+	// but can probably be ignored.
+}

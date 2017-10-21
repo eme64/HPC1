@@ -1,0 +1,29 @@
+I assume we want to add indices to the "good_members" list.
+And in the end pos will give us the number of good members.
+Further I assume the ordering of the members in the list is not relevant.
+
+
+Now the threads will get different subsets of the members.
+What may happen is that two threads test if their members i and j are good.
+Both happen to be. So now poth write them to the position pos.
+Problem is one of the updates will get lost.
+Then both will atomically increase the pos.
+This means one update gets lost and one slot will not have been written properly.
+
+To avoid this race condition we need to have a bigger critical or atomic section.
+
+if(is_good(i)) { // this can be outside, good because probably expensive
+	int my_pos; // create temp variable, private
+	
+	#pragma omp atomic capture
+	{
+		my_pos = pos++;
+	}
+	
+	good_members[my_pos] = i;
+}
+
+This allows us to keep our slot position while also safely updating pos for all others.
+No one else will ever get the same my_pos.
+Also we could keep the update to memory for good_members outside any the critical section.
+Atomic capture might be especially fast if supported by hardware.

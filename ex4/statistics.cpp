@@ -43,17 +43,40 @@ void compute_max_density_omp(double *rho_, int N)
 	max_rho = rho_[0];
 	max_i = 0;
 	max_j = 0;
-
-	for (int i = 0; i < N; ++i)
-		for (int j = 0; j < N; ++j)
-		{
-			if (rho_[i*N + j] > max_rho)
+	
+	// problem: have 3 variables to keep track of. Do not want to sequentialize them too often
+	// idea: find max locally, write back with critical section at the end
+	
+	#pragma omp parallel
+	{
+		// local variables
+		double local_max = rho_[0];
+		int local_max_i = 0;
+		int local_max_j = 0;
+		
+		#pragma omp for collapse(2) // works well also without collapse
+		for (int i = 0; i < N; ++i)
+			for (int j = 0; j < N; ++j)
 			{
-				max_rho = rho_[i*N + j];
-				max_i = i;
-				max_j = j;
+				if (rho_[i*N + j] > local_max)
+				{
+					local_max = rho_[i*N + j];
+					local_max_i = i;
+					local_max_j = j;
+					
+				}
+			}
+		
+		// write back
+		#pragma omp critical
+		{
+			if(local_max > max_rho){
+				max_rho = local_max;
+				max_i = local_max_i;
+				max_j = local_max_j;
 			}
 		}
+	}
 
 	printf("=====================================\n");
 	printf("Output of compute_max_omp_density():\n");
