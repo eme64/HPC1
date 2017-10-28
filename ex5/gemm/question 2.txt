@@ -2,6 +2,11 @@ I installed OpenBlas from:
 http://www.openblas.net/
 https://github.com/xianyi/OpenBLAS
 
+First it had to be installed. I installed it into "~/OPENBLAS"
+Linking is explained here:
+https://github.com/xianyi/OpenBLAS/wiki/User-Manual#link-the-library
+You can look into the Makefile for the commandline.
+
 It is multithreaded.
 Info to multithreading:
 https://github.com/xianyi/OpenBLAS/wiki/faq#multi-threaded
