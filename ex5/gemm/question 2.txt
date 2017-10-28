@@ -1,0 +1,21 @@
+I installed OpenBlas from:
+http://www.openblas.net/
+https://github.com/xianyi/OpenBLAS
+
+It is multithreaded.
+Info to multithreading:
+https://github.com/xianyi/OpenBLAS/wiki/faq#multi-threaded
+
+set number of threads:
+openblas_set_num_threads(num_threads);
+Apparently OpenMP and BLAS can conflict on multithreading, this has to be kept in mind!
+
+Speed:
+best sequential: row-wise: 42.2ms
+my parallel: 59.1ms
+BLAS parallel: 2.7ms
+BLAS single core: 6.1ms
+
+I really don't know what I did wrong with my parallelization.
+The write-pattern should be ok for cache.
+Maybe the read-patterns for B are not good, but I would need a completely different approach like blocking to make a difference for that.
