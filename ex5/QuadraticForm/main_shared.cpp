@@ -46,10 +46,6 @@ int main(int argc, char** argv)
 	 Ok, let's get to work.	
 	*/
 	
-	int num_threads = omp_get_num_threads();
-	
-	std::cout << "num threads: " << num_threads << std::endl;
-	
 	// -------------------------------- w needed in full by all -> init anywhere
 	/// init w_i = 1. - i / (3.*n)
 	for (int i=0; i<n; ++i)
@@ -58,12 +54,19 @@ int main(int argc, char** argv)
 	// -------------------------------- init A and v split into regions
 	#pragma omp parallel
 	{
+		int num_threads = omp_get_num_threads();
+		
 		int id = omp_get_thread_num();
-		std::cout << "id: " << id << std::endl;
 		
-		int i_from = n/num_threads*id;
-		int i_to = n/num_threads*(id+1);
-		
+		int i_from = n*id/num_threads;
+		int i_to = n*(id+1)/num_threads;
+		/*
+		#pragma omp critical
+                {
+                        std::cout << "id: " << id << std::endl;
+                	std::cout << "from " << i_from << " to " << i_to << std::endl;
+		}
+		*/
 		/// init A_ij = (i + 2.*j) / n^2
 		for (int i=i_from; i<i_to; ++i)
 			for (int j=0; j<n; ++j)
@@ -81,17 +84,26 @@ int main(int argc, char** argv)
 	
 	#pragma omp parallel reduction(+:sum)
 	{
+		int num_threads = omp_get_num_threads();
 		int id = omp_get_thread_num();
-		std::cout << "id: " << id << std::endl;
+		//std::cout << "id: " << id << std::endl;
 		
-		int i_from = n/num_threads*id; // probably equivalent to "omp for"
-		int i_to = n/num_threads*(id+1);
-		
+		int i_from = n*id/num_threads;
+                int i_to = n*(id+1)/num_threads;
+		/*
+		#pragma omp critical
+                {
+                        std::cout << "id: " << id << std::endl;
+                        std::cout << "from " << i_from << " to " << i_to << std::endl;
+                }
+		*/
 		for(int i=i_from; i<i_to; i++)
 			for(int j=0; j<n; j++)
 				sum=sum+ v[i]*A[i*n+j]*w[j];
 	}
 	
+	std::cout << "sum: " << sum << std::endl;
+		
 	/// free memory
 	free(A);
 	free(v);

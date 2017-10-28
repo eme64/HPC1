@@ -10,4 +10,4 @@ skeleton: skeleton.cpp
 	g++ skeleton.cpp -o $@
 
 shared: main_shared.cpp
-	g++ -O3 -Wall -std=c++11 -fopenmp main_shared.cpp -o main_shared
+	g++ -fopenmp main_shared.cpp -o shared
