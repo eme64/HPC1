@@ -24,3 +24,6 @@ BLAS single core: 6.1ms
 I really don't know what I did wrong with my parallelization.
 The write-pattern should be ok for cache.
 Maybe the read-patterns for B are not good, but I would need a completely different approach like blocking to make a difference for that.
+
+A friend tested the same code and got better parallel time than sequential, so maybe the problem lies with the machine or compiler?
+But probably the code is ok then?
