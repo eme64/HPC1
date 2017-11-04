@@ -129,7 +129,9 @@ int main(int argc, char **argv)
             A[i*m + j] = I[j*n+i];
         }
     }
-    
+   	for(int i=0;i<10; i++){
+                std::cout << "A[" << i << "] = " << A[i] << std::endl;
+        } 
 
     ///////////////////////////////////////////////////////////////////////////
     // TODO: Implement your PCA algorithm here
@@ -161,7 +163,9 @@ int main(int argc, char **argv)
 	for(int j=0; j<m; j++){
 		AMean[i]+=A[i*m+j];
 	}
+	AMean[i] /= m; // mean
 	
+		
 	AStd[i]=0;
 	for(int j=0;j<m;j++){// sum of squares
 		AStd[i]+= (A[i*m+j]-AMean[i])*(A[i*m+j]-AMean[i]);
@@ -185,6 +189,13 @@ int main(int argc, char **argv)
 		A[i*m+j]/= AStd[i]; // normalize
         }
     }
+	
+	for(int i=0;i<10; i++){
+                std::cout << "AMean[" << i << "] = " << AMean[i] << std::endl;
+		std::cout << "AStd[" << i << "] = " << AStd[i] << std::endl;
+		std::cout << "A[" << i << "] = " << A[i] << std::endl;
+        }
+	
     t_elapsed += omp_get_wtime();
     std::cout << "NORMAL. TIME=" << t_elapsed << " seconds\n";
     ///////////////////////////////////////////////////////////////////////////
@@ -203,10 +214,12 @@ int main(int argc, char **argv)
 			for(int k=0; k<m; k++){
 				C[i*n+j]+= A[i*m+k] * A[j*m+k];
 			}
-			C[i*n+j]/=(double)(m);// divide matrix
+			C[i*n+j]/=(double)(m-1);// divide matrix
 		}
 	}
-
+	for(int i=0;i<10; i++){
+		std::cout << "C[" << i << "] = " << C[i] << std::endl;
+	}
     t_elapsed += omp_get_wtime();
     std::cout << "C-MATRIX TIME=" << t_elapsed << " seconds\n";
     ///////////////////////////////////////////////////////////////////////////
@@ -258,7 +271,7 @@ int main(int argc, char **argv)
         for (int j = 0; j < npc; j++)
         {
             // TODO: compute the principal components
-            // C now holds the eigenvectors, stored row-wise
+            // C now holds the eigenvectors, stored row-wise (wrong ?)
             	PCReduced[i*npc + j]=0;
 		for(int k=0;k<n;k++){
 			PCReduced[i*npc + j] += A[k*m + i]*C[(j+n-npc)*n+k];
