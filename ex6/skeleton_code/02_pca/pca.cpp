@@ -260,7 +260,7 @@ int main(int argc, char **argv)
     std::cout << "DSYEV TIME=" << t_elapsed << " seconds\n";
     ///////////////////////////////////////////////////////////////////////////
 	std::cout << "exit status: info = " << info << std::endl;
-	std::cout << "EVec of biggest EVal:"
+	std::cout << "EVec of biggest EVal:"<< std::endl;
 	for(int i=0;i<10;i++){
 		std::cout << "V[" << i << "]= " << C[i+n*(n-1)]<< std::endl;
 	}
@@ -329,7 +329,7 @@ int main(int argc, char **argv)
 
     // Write the reconstructed image in ascii format.  You can view the image
     // in Matlab with the show_image.m script.
-    write_ascii(out_filename, Z, m, n);
+    write_ascii(out_filename, Z, n, m);
     
 	// doing some error calculations:
 	double error = 0;
