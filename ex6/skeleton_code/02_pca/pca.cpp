@@ -285,6 +285,10 @@ int main(int argc, char **argv)
 		}
         }
     }
+	std::cout << "last line of PCReduced:" << std::endl;
+	for(int i=0;i<10;i++){
+                std::cout << "PCReduced["<<i<<"]= " << PCReduced[i+(m-1)*npc] << std::endl;
+        }
 
     // TODO: Report the compression ratio
 	std::cout << std::endl << "------- compression ratio:" << std::endl;
@@ -316,7 +320,7 @@ int main(int argc, char **argv)
             Z[i*n + j] = 0;
 		for(int k=0; k<npc;k++){
 			//PCReduced[i*npc + j] += A[k*m + i]*C[(j+n-npc)*n+k];
-			Z[i*n+j] += PCReduced[i*npc+k]*C[k*n+(j+n-npc)];
+			Z[i*n+j] += PCReduced[i*npc+k]*C[j+n*(k+n-npc)];
 		}
 		Z[i*n+j] *= AStd[j];
 		Z[i*n+j] += AMean[j];
@@ -329,7 +333,7 @@ int main(int argc, char **argv)
 
     // Write the reconstructed image in ascii format.  You can view the image
     // in Matlab with the show_image.m script.
-    write_ascii(out_filename, Z, n, m);
+    write_ascii(out_filename, Z, m, n);
     
 	// doing some error calculations:
 	double error = 0;
