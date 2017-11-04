@@ -296,12 +296,12 @@ int main(int argc, char **argv)
         }}
 
     // TODO: Report the compression ratio
-	std::cout << std::endl << "------- compression ratio:" << std::endl;
-	std::cout << "data in: A = m*n = " << m << "*" << n << " = " << m*n << std::endl;
-	std::cout << "data out: PCReduced + VReduced + AStd + AMean" << std::endl;
-	std::cout << "= m*npc + n*npc + n + n" << std::endl;
-	std::cout << "= " << m << "*" << npc << " + " << n << "*" << npc << " + 2*" << n << std::endl;
-	std::cout << "ratio: out/in = " << (double)(m*npc + n*npc + 2*n)/(double)(m*n) << std::endl << std::endl;
+	//d::cout << std::endl << "------- compression ratio:" << std::endl;
+	//d::cout << "data in: A = m*n = " << m << "*" << n << " = " << m*n << std::endl;
+	//d::cout << "data out: PCReduced + VReduced + AStd + AMean" << std::endl;
+	//d::cout << "= m*npc + n*npc + n + n" << std::endl;
+	//d::cout << "= " << m << "*" << npc << " + " << n << "*" << npc << " + 2*" << n << std::endl;
+	std::cout << "ratio: out/in = " << (double)(m*npc + n*npc + 2*n)/(double)(m*n) << std::endl;
 
     t_elapsed += omp_get_wtime();
     std::cout << "PCREDUCED TIME=" << t_elapsed << " seconds\n";
@@ -309,6 +309,7 @@ int main(int argc, char **argv)
 
     double end_t = omp_get_wtime();
     std::cout << "OVERALL TIME=" << end_t - start_t << " seconds\n";
+	
 
     ///////////////////////////////////////////////////////////////////////////
     // TODO: 6
