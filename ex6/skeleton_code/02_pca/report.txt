@@ -1,0 +1,120 @@
+####################################################   REPORT   ######################################################
+About Errors: Crearly decays as more npc is higher
+
+------ About Scaling:
+For sequential "elvis" the runtime was not significantly different for K=1,30,50,100, see "report_seq_elvis".
+Elvis parallel is slower for K=50,100.
+
+Generally making npc bigger does not change the overall time much.
+This is because some operations depend on m*n which are much more expensive anyway.
+
+Seq. Elvis: ~0.5 sec.       -> m*n = 328300
+Par. Elvis: ~1.0 sec.       -> m*n = 328300
+Par. Cyclo: ~300 sec.       -> m*n = 16777216
+Par. Earth: ~3500 sec.      -> m*n = 90250000
+
+It does not quite scale linearly. But this is to be expected, since pca is more expensive.
+The parallelization of the eigen-decomp. probably has helped some.
+One could still try to improve the runtime by parallelizing the code I have added (all the multiplications).
+But I don't have the time for that now.
+
+#################################################### Parallel DATA BELOW ######################################################
+------------------------------------------------------------
+./pca_omp -m 469 -n 700 -npc 50 -if ../../data/elvis.bin.gz -of ../../data/elvis.50.txt
+
+MEAN/STD TIME=0.000822739 seconds
+NORMAL. TIME=0.000936994 seconds
+C-MATRIX TIME=0.40318 seconds
+DSYEV TIME=0.318726 seconds
+ratio: out/in = 0.182303
+PCREDUCED TIME=0.187708 seconds
+OVERALL TIME=0.911493 seconds
+ - - ERROR: 0.00228492
+
+------------------------------------------------------------
+./pca_omp -m 469 -n 700 -npc 100 -if ../../data/elvis.bin.gz -of ../../data/elvis.100.txt
+
+MEAN/STD TIME=0.000750427 seconds
+NORMAL. TIME=0.000860028 seconds
+C-MATRIX TIME=0.40663 seconds
+DSYEV TIME=0.32305 seconds
+ratio: out/in = 0.360341
+PCREDUCED TIME=0.363955 seconds
+OVERALL TIME=1.09535 seconds
+ - - ERROR: 0.000761084
+
+
+------------------------------------------------------------
+./pca_omp -m 4096 -n 4096 -npc 50 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.50_v2.txt
+
+MEAN/STD TIME=0.0574234 seconds
+NORMAL. TIME=0.0723851 seconds
+C-MATRIX TIME=134.415 seconds
+DSYEV TIME=108.466 seconds
+ratio: out/in = 0.0249023
+PCREDUCED TIME=16.9822 seconds
+OVERALL TIME=259.993 seconds
+ - - ERROR: 406.813
+
+------------------------------------------------------------
+./pca_omp -m 4096 -n 4096 -npc 100 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.100_v2.txt
+
+MEAN/STD TIME=0.0550446 seconds
+NORMAL. TIME=0.0672834 seconds
+C-MATRIX TIME=135.387 seconds
+DSYEV TIME=107.29 seconds
+ratio: out/in = 0.0493164
+PCREDUCED TIME=33.6635 seconds
+OVERALL TIME=276.463 seconds
+ - - ERROR: 227.322
+ 
+------------------------------------------------------------
+./pca_omp -m 4096 -n 4096 -npc 200 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.200.txt
+
+MEAN/STD TIME=0.0646963 seconds
+NORMAL. TIME=0.0711072 seconds
+C-MATRIX TIME=135.552 seconds
+DSYEV TIME=108.744 seconds
+ratio: out/in = 0.0981445
+PCREDUCED TIME=67.8716 seconds
+OVERALL TIME=312.304 seconds
+ - - ERROR: 108.564
+
+------------------------------------------------------------
+./pca_omp -m 9500 -n 9500 -npc 50 -if ../../data/earth.bin.gz -of ../../data/earth.50.txt
+
+MEAN/STD TIME=0.500863 seconds
+NORMAL. TIME=0.328349 seconds
+C-MATRIX TIME=1654.62 seconds
+DSYEV TIME=1514.71 seconds
+ratio: out/in = 0.0107368
+PCREDUCED TIME=132.44 seconds
+OVERALL TIME=3302.6 seconds
+ - - ERROR: 409.545
+
+------------------------------------------------------------
+./pca_omp -m 9500 -n 9500 -npc 100 -if ../../data/earth.bin.gz -of ../../data/earth.100.txt
+
+MEAN/STD TIME=0.377792 seconds
+NORMAL. TIME=0.329197 seconds
+C-MATRIX TIME=1689.83 seconds
+DSYEV TIME=1532.5 seconds
+ratio: out/in = 0.0212632
+PCREDUCED TIME=258.422 seconds
+OVERALL TIME=3481.46 seconds
+ - - ERROR: 293.817
+ 
+ 
+------------------------------------------------------------
+./pca_omp -m 9500 -n 9500 -npc 200 -if ../../data/earth.bin.gz -of ../../data/earth.200.txt
+
+MEAN/STD TIME=0.466775 seconds
+NORMAL. TIME=0.341259 seconds
+C-MATRIX TIME=1663.49 seconds
+DSYEV TIME=1521.43 seconds
+ratio: out/in = 0.0423158
+PCREDUCED TIME=528.806 seconds
+OVERALL TIME=3714.53 seconds
+ - - ERROR: 196.444
+
+
