@@ -129,7 +129,7 @@ int main(int argc, char **argv)
             A[i*m + j] = I[j*n+i];
         }
     }
-    delete[] I;
+    
 
     ///////////////////////////////////////////////////////////////////////////
     // TODO: Implement your PCA algorithm here
@@ -200,11 +200,11 @@ int main(int argc, char **argv)
 	for(int i=0;i<n;i++){// doing full matrix, could only do upper half
 		for(int j=0; j<n;j++){
 			C[i*n + j] = 0; // dot of i'th and j'th row of C
-			for(int k=0; k<m){
+			for(int k=0; k<m; k++){
 				C[i*n+j]+= A[i*m+k] * A[j*m+k];
 			}
+			C[i*n+j]/=(double)(m);// divide matrix
 		}
-		C[i*n+j]/=(double)(N-1);// divide matrix
 	}
 
     t_elapsed += omp_get_wtime();
@@ -258,11 +258,21 @@ int main(int argc, char **argv)
         for (int j = 0; j < npc; j++)
         {
             // TODO: compute the principal components
-            
+            // C now holds the eigenvectors, stored row-wise
+            	PCReduced[i*npc + j]=0;
+		for(int k=0;k<n;k++){
+			PCReduced[i*npc + j] += A[k*m + i]*C[(j+n-npc)*n+k];
+		}
         }
     }
 
     // TODO: Report the compression ratio
+	std::cout << std::endl << "------- compression ratio:" << std::endl;
+	std::cout << "data in: A = m*n = " << m << "*" << n << " = " << m*n << std::endl;
+	std::cout << "data out: PCReduced + VReduced + AStd + AMean" << std::endl;
+	std::cout << "= m*npc + n*npc + n + n" << std::endl;
+	std::cout << "= " << m << "*" << npc << " + " << n << "*" << npc << " + 2*" << n << std::endl;
+	std::cout << "ratio: out/in = " << (double)(m*npc + n*npc + 2*n)/(double)(m*n) << std::endl << std::endl;
 
     t_elapsed += omp_get_wtime();
     std::cout << "PCREDUCED TIME=" << t_elapsed << " seconds\n";
@@ -283,6 +293,13 @@ int main(int argc, char **argv)
             // TODO: Reconstruct image here.  Don't forget to denormalize.  The
             // dimension of the reconstructed image is m x n (rows x columns).
             // Z[i*n + j] = ...
+            Z[i*n + j] = 0;
+		for(int k=0; k<npc;k++){
+			//PCReduced[i*npc + j] += A[k*m + i]*C[(j+n-npc)*n+k];
+			Z[i*n+j] += PCReduced[i*npc+k]*C[k*n+(j+n-npc)];
+		}
+		Z[i*n+j] *= AStd[j];
+		Z[i*n+j] += AMean[j];
         }
     }
 
@@ -290,7 +307,21 @@ int main(int argc, char **argv)
     // Write the reconstructed image in ascii format.  You can view the image
     // in Matlab with the show_image.m script.
     write_ascii(out_filename, Z, m, n);
-    ///////////////////////////////////////////////////////////////////////////
+    
+	// doing some error calculations:
+	double error = 0;
+	
+	for (int i = 0; i < n; i++) {
+        	for (int j = 0; j < m; j++) {
+            		error += (I[j*n+i]-Z[j*n+i])*(I[j*n+i]-Z[j*n+i]);
+        	}
+    	}
+	
+	std::cout << " - - ERROR: " << error/(double)(m*n) << std::endl;
+	
+	delete[] I; // finally releasing input file
+
+	///////////////////////////////////////////////////////////////////////////
 
     // cleanup
     delete[] work;

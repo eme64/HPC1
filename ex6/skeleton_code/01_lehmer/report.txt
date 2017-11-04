@@ -1,0 +1,40 @@
+----------------- DATA FROM LOGFILES --------------
+-------------------------------- SEQ 4096:
+Elapsed time = 108.601 seconds
+Largest Eigenvalues:
+1: 2232.13
+2: 665.848
+3: 316.64
+4: 184.61
+5: 120.805
+-------------------------------- SEQ 8192:
+Elapsed time = 1431.92 seconds
+Largest Eigenvalues:
+1: 4463.98
+2: 1331.61
+3: 633.24
+4: 369.196
+5: 241.594
+-------------------------------- OMP 4096:
+Elapsed time = 106.597 seconds
+Largest Eigenvalues:
+1: 2232.13
+2: 665.848
+3: 316.64
+4: 184.61
+5: 120.805
+-------------------------------- OMP 8192:
+Elapsed time = 1001.47 seconds
+Largest Eigenvalues:
+1: 4463.98
+2: 1331.61
+3: 633.24
+4: 369.196
+5: 241.594
+
+------------------- ANALYSIS -----------------------
+Eigenvalues are consistant.
+For N=4096 there is hardly a speedup.
+For smaller N the parallel is slower.
+But with N=8192 we can see a speedup of about 1.4
+But this is also not very much given we used 24 cores.
