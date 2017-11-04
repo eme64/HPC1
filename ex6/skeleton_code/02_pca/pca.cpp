@@ -193,7 +193,7 @@ int main(int argc, char **argv)
 	for(int i=0;i<10; i++){
                 std::cout << "AMean[" << i << "] = " << AMean[i] << std::endl;
 		std::cout << "AStd[" << i << "] = " << AStd[i] << std::endl;
-		std::cout << "A[" << i << "] = " << A[i] << std::endl;
+		std::cout << "B[" << i << "] = " << A[i] << std::endl;
         }
 	
     t_elapsed += omp_get_wtime();
@@ -259,7 +259,14 @@ int main(int argc, char **argv)
     t_elapsed += omp_get_wtime();
     std::cout << "DSYEV TIME=" << t_elapsed << " seconds\n";
     ///////////////////////////////////////////////////////////////////////////
-
+	std::cout << "exit status: info = " << info << std::endl;
+	std::cout << "EVec of biggest EVal:"
+	for(int i=0;i<10;i++){
+		std::cout << "V[" << i << "]= " << C[i+n*(n-1)]<< std::endl;
+	}
+	for(int i=0;i<10;i++){
+                std::cout << "D[" << n-i-1 << "]= " << W[n-i-1]<< std::endl;
+        }
     ///////////////////////////////////////////////////////////////////////////
     // TODO: 5.
     t_elapsed = -omp_get_wtime();
@@ -315,6 +322,9 @@ int main(int argc, char **argv)
 		Z[i*n+j] += AMean[j];
         }
     }
+	for(int i=0;i<10;i++){
+		std::cout << "Z["<<i<<"]= " << Z[i] << std::endl;
+	}
 
 
     // Write the reconstructed image in ascii format.  You can view the image
