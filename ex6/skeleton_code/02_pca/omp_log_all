@@ -1,0 +1,294 @@
+Sender: LSF System <lsfadmin@eu-c7-023-15>
+Subject: Job 52391863: <./pca_omp -m 469 -n 700 -npc 50 -if ../../data/elvis.bin.gz -> in cluster <euler> Exited
+
+Job <./pca_omp -m 469 -n 700 -npc 50 -if ../../data/elvis.bin.gz -> was submitted from host <eu-login-07> by user <peterem> in cluster <euler> at Sat Nov  4 15:17:11 2017.
+Job was executed on host(s) <24*eu-c7-023-15>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Sat Nov  4 15:17:43 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex6/skeleton_code/02_pca> was used as the working directory.
+Started at Sat Nov  4 15:17:43 2017.
+Terminated at Sat Nov  4 15:17:44 2017.
+Results reported at Sat Nov  4 15:17:44 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./pca_omp -m 469 -n 700 -npc 50 -if ../../data/elvis.bin.gz -
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   0.04 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   31 sec.
+    Turnaround time :                            33 sec.
+
+The output (if any) follows:
+
+Usage: ./pca_omp -m <rows> -n <cols> -npc <number of principal components> -if <input filename> -of <output filename>
+Sender: LSF System <lsfadmin@eu-c7-005-15>
+Subject: Job 52391870: <./pca_omp -m 469 -n 700 -npc 50 -if ../../data/elvis.bin.gz -of ../../data/elvis.50.txt> in cluster <euler> Done
+
+Job <./pca_omp -m 469 -n 700 -npc 50 -if ../../data/elvis.bin.gz -of ../../data/elvis.50.txt> was submitted from host <eu-login-07> by user <peterem> in cluster <euler> at Sat Nov  4 15:18:23 2017.
+Job was executed on host(s) <24*eu-c7-005-15>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Sat Nov  4 15:18:44 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex6/skeleton_code/02_pca> was used as the working directory.
+Started at Sat Nov  4 15:18:44 2017.
+Terminated at Sat Nov  4 15:18:46 2017.
+Results reported at Sat Nov  4 15:18:46 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./pca_omp -m 469 -n 700 -npc 50 -if ../../data/elvis.bin.gz -of ../../data/elvis.50.txt
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1.08 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   25 sec.
+    Turnaround time :                            23 sec.
+
+The output (if any) follows:
+
+MEAN/STD TIME=0.000822739 seconds
+NORMAL. TIME=0.000936994 seconds
+C-MATRIX TIME=0.40318 seconds
+DSYEV TIME=0.318726 seconds
+ratio: out/in = 0.182303
+PCREDUCED TIME=0.187708 seconds
+OVERALL TIME=0.911493 seconds
+ - - ERROR: 0.00228492
+Sender: LSF System <lsfadmin@eu-c7-024-10>
+Subject: Job 52391871: <./pca_omp -m 469 -n 700 -npc 100 -if ../../data/elvis.bin.gz -of ../../data/elvis.100.txt> in cluster <euler> Done
+
+Job <./pca_omp -m 469 -n 700 -npc 100 -if ../../data/elvis.bin.gz -of ../../data/elvis.100.txt> was submitted from host <eu-login-07> by user <peterem> in cluster <euler> at Sat Nov  4 15:18:47 2017.
+Job was executed on host(s) <24*eu-c7-024-10>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Sat Nov  4 15:19:12 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex6/skeleton_code/02_pca> was used as the working directory.
+Started at Sat Nov  4 15:19:12 2017.
+Terminated at Sat Nov  4 15:19:16 2017.
+Results reported at Sat Nov  4 15:19:16 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./pca_omp -m 469 -n 700 -npc 100 -if ../../data/elvis.bin.gz -of ../../data/elvis.100.txt
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1.35 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   4 sec.
+    Turnaround time :                            29 sec.
+
+The output (if any) follows:
+
+MEAN/STD TIME=0.000750427 seconds
+NORMAL. TIME=0.000860028 seconds
+C-MATRIX TIME=0.40663 seconds
+DSYEV TIME=0.32305 seconds
+ratio: out/in = 0.360341
+PCREDUCED TIME=0.363955 seconds
+OVERALL TIME=1.09535 seconds
+ - - ERROR: 0.000761084
+Sender: LSF System <lsfadmin@eu-c7-019-16>
+Subject: Job 52391876: <./pca_omp -m 469 -n 700 -npc 50 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.50.txt> in cluster <euler> Done
+
+Job <./pca_omp -m 469 -n 700 -npc 50 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.50.txt> was submitted from host <eu-login-07> by user <peterem> in cluster <euler> at Sat Nov  4 15:19:59 2017.
+Job was executed on host(s) <24*eu-c7-019-16>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Sat Nov  4 15:20:13 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex6/skeleton_code/02_pca> was used as the working directory.
+Started at Sat Nov  4 15:20:13 2017.
+Terminated at Sat Nov  4 15:20:15 2017.
+Results reported at Sat Nov  4 15:20:15 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./pca_omp -m 469 -n 700 -npc 50 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.50.txt
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1.26 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   11 sec.
+    Turnaround time :                            16 sec.
+
+The output (if any) follows:
+
+MEAN/STD TIME=0.000743074 seconds
+NORMAL. TIME=0.000860381 seconds
+C-MATRIX TIME=0.407692 seconds
+DSYEV TIME=0.312142 seconds
+ratio: out/in = 0.182303
+PCREDUCED TIME=0.187904 seconds
+OVERALL TIME=0.909441 seconds
+ - - ERROR: 248.113
+Sender: LSF System <lsfadmin@eu-c7-024-10>
+Subject: Job 52391875: <./pca_omp -m 469 -n 700 -npc 100 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.100.txt> in cluster <euler> Done
+
+Job <./pca_omp -m 469 -n 700 -npc 100 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.100.txt> was submitted from host <eu-login-07> by user <peterem> in cluster <euler> at Sat Nov  4 15:19:40 2017.
+Job was executed on host(s) <24*eu-c7-024-10>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Sat Nov  4 15:20:13 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex6/skeleton_code/02_pca> was used as the working directory.
+Started at Sat Nov  4 15:20:13 2017.
+Terminated at Sat Nov  4 15:20:15 2017.
+Results reported at Sat Nov  4 15:20:15 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./pca_omp -m 469 -n 700 -npc 100 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.100.txt
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1.48 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   29 sec.
+    Turnaround time :                            35 sec.
+
+The output (if any) follows:
+
+MEAN/STD TIME=0.000918994 seconds
+NORMAL. TIME=0.00141781 seconds
+C-MATRIX TIME=0.411368 seconds
+DSYEV TIME=0.271412 seconds
+ratio: out/in = 0.360341
+PCREDUCED TIME=0.384699 seconds
+OVERALL TIME=1.07031 seconds
+ - - ERROR: 74.3709
+Sender: LSF System <lsfadmin@eu-c7-019-16>
+Subject: Job 52391899: <./pca_omp -m 4096 -n 4096 -npc 50 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.50_v2.txt> in cluster <euler> Done
+
+Job <./pca_omp -m 4096 -n 4096 -npc 50 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.50_v2.txt> was submitted from host <eu-login-07> by user <peterem> in cluster <euler> at Sat Nov  4 15:20:51 2017.
+Job was executed on host(s) <24*eu-c7-019-16>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Sat Nov  4 15:21:12 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex6/skeleton_code/02_pca> was used as the working directory.
+Started at Sat Nov  4 15:21:12 2017.
+Terminated at Sat Nov  4 15:25:55 2017.
+Results reported at Sat Nov  4 15:25:55 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./pca_omp -m 4096 -n 4096 -npc 50 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.50_v2.txt
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   280.74 sec.
+    Max Memory :                                 535 MB
+    Average Memory :                             371.90 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24041.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                4
+    Run time :                                   307 sec.
+    Turnaround time :                            304 sec.
+
+The output (if any) follows:
+
+MEAN/STD TIME=0.0574234 seconds
+NORMAL. TIME=0.0723851 seconds
+C-MATRIX TIME=134.415 seconds
+DSYEV TIME=108.466 seconds
+ratio: out/in = 0.0249023
+PCREDUCED TIME=16.9822 seconds
+OVERALL TIME=259.993 seconds
+ - - ERROR: 406.813
+Sender: LSF System <lsfadmin@eu-c7-005-16>
+Subject: Job 52391905: <./pca_omp -m 4096 -n 4096 -npc 100 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.100_v2.txt> in cluster <euler> Done
+
+Job <./pca_omp -m 4096 -n 4096 -npc 100 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.100_v2.txt> was submitted from host <eu-login-07> by user <peterem> in cluster <euler> at Sat Nov  4 15:21:10 2017.
+Job was executed on host(s) <24*eu-c7-005-16>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Sat Nov  4 15:21:43 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex6/skeleton_code/02_pca> was used as the working directory.
+Started at Sat Nov  4 15:21:43 2017.
+Terminated at Sat Nov  4 15:26:58 2017.
+Results reported at Sat Nov  4 15:26:58 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./pca_omp -m 4096 -n 4096 -npc 100 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.100_v2.txt
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   313.52 sec.
+    Max Memory :                                 536 MB
+    Average Memory :                             375.09 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24040.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                4
+    Run time :                                   337 sec.
+    Turnaround time :                            348 sec.
+
+The output (if any) follows:
+
+MEAN/STD TIME=0.0550446 seconds
+NORMAL. TIME=0.0672834 seconds
+C-MATRIX TIME=135.387 seconds
+DSYEV TIME=107.29 seconds
+ratio: out/in = 0.0493164
+PCREDUCED TIME=33.6635 seconds
+OVERALL TIME=276.463 seconds
+ - - ERROR: 227.322
