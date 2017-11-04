@@ -1,0 +1,39 @@
+-------------------------------------------------K=1
+MEAN/STD TIME=0.000712835 seconds
+NORMAL. TIME=0.000529337 seconds
+C-MATRIX TIME=0.255835 seconds
+DSYEV TIME=0.180835 seconds
+ratio: out/in = 0.00782516
+PCREDUCED TIME=0.00201896 seconds
+OVERALL TIME=0.440085 seconds
+ - - ERROR: 0.0330841
+ 
+--------------------------------------------- K=30
+MEAN/STD TIME=0.000919219 seconds
+NORMAL. TIME=0.000602339 seconds
+C-MATRIX TIME=0.280955 seconds
+DSYEV TIME=0.256946 seconds
+ratio: out/in = 0.111087
+PCREDUCED TIME=0.0146459 seconds
+OVERALL TIME=0.554231 seconds
+ - - ERROR: 0.00422389
+ 
+-------------------------------------------------K=50
+MEAN/STD TIME=0.00231406 seconds
+NORMAL. TIME=0.000726937 seconds
+C-MATRIX TIME=0.328227 seconds
+DSYEV TIME=0.182854 seconds
+ratio: out/in = 0.182303
+PCREDUCED TIME=0.0245087 seconds
+OVERALL TIME=0.538831 seconds
+ - - ERROR: 0.00228492
+ 
+--------------------------------------------- K=100
+MEAN/STD TIME=0.000720984 seconds
+NORMAL. TIME=0.000506888 seconds
+C-MATRIX TIME=0.264306 seconds
+DSYEV TIME=0.175785 seconds
+ratio: out/in = 0.360341
+PCREDUCED TIME=0.0403257 seconds
+OVERALL TIME=0.481789 seconds
+ - - ERROR: 0.000761084
