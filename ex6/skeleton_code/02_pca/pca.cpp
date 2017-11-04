@@ -78,8 +78,8 @@ int main(int argc, char **argv)
     // input parameters (default)
     int m = 469, n = 700;                        // image size (rows, columns)
     int npc = 50;                                // number of principal components
-    char *inp_filename = (char *)"elvis.bin.gz"; // input filename (compressed binary)
-    char *out_filename = (char *)"elvis.50.bin"; // output filename (text)
+    char *inp_filename = (char *)"../../data/elvis.bin.gz"; // input filename (compressed binary)
+    char *out_filename = (char *)"../../data/elvis.50.bin"; // output filename (text)
 
     // parse input parameters
     if ((argc != 1) && (argc != 11)) {
@@ -152,10 +152,21 @@ int main(int argc, char **argv)
     double *AStd  = new (std::nothrow) double[n];
     assert(AMean != NULL);
     assert(AStd  != NULL);
-
+	
+	
     for (int i = 0; i < n; i++)
     {
         // TODO: compute mean and standard deviation of features of A
+        AMean[i]=0;
+	for(int j=0; j<m; j++){
+		AMean[i]+=A[i*m+j];
+	}
+	
+	AStd[i]=0;
+	for(int j=0;j<m;j++){// sum of squares
+		AStd[i]+= (A[i*m+j]-AMean[i])*(A[i*m+j]-AMean[i]);
+	}
+	AStd[i] = std::sqrt(AStd[i]/(m-1)); // estimated std deviation
     }
     t_elapsed += omp_get_wtime();
     std::cout << "MEAN/STD TIME=" << t_elapsed << " seconds\n";
@@ -170,6 +181,8 @@ int main(int argc, char **argv)
         for (int j = 0; j < m; j++)
         {
             // TODO: normalize data here
+            	A[i*m+j]-= AMean[i]; // centralize
+		A[i*m+j]/= AStd[i]; // normalize
         }
     }
     t_elapsed += omp_get_wtime();
@@ -183,6 +196,16 @@ int main(int argc, char **argv)
     assert(C!=NULL);
 
     // TODO: Compute covariance matrix here
+	
+	for(int i=0;i<n;i++){// doing full matrix, could only do upper half
+		for(int j=0; j<n;j++){
+			C[i*n + j] = 0; // dot of i'th and j'th row of C
+			for(int k=0; k<m){
+				C[i*n+j]+= A[i*m+k] * A[j*m+k];
+			}
+		}
+		C[i*n+j]/=(double)(N-1);// divide matrix
+	}
 
     t_elapsed += omp_get_wtime();
     std::cout << "C-MATRIX TIME=" << t_elapsed << " seconds\n";
@@ -194,8 +217,8 @@ int main(int argc, char **argv)
 
     // see also for the interface to dsyev_():
     // http://www.netlib.org/lapack/explore-html/d2/d8a/group__double_s_yeigen_ga442c43fca5493590f8f26cf42fed4044.html#ga442c43fca5493590f8f26cf42fed4044
-    char jobz = '?'; // TODO: compute both, eigenvalues and orthonormal eigenvectors
-    char uplo = '?'; // TODO: how did you compute the (symmetric) covariance matrix?
+    char jobz = 'V'; // TODO: compute both, eigenvalues and orthonormal eigenvectors
+    char uplo = 'U'; // TODO: how did you compute the (symmetric) covariance matrix?
     int info, lwork;
 
     double *W = new (std::nothrow) double[n]; // eigenvalues
@@ -209,7 +232,7 @@ int main(int argc, char **argv)
     lwork = -1;
 
     // TODO: call dsyev here
-
+	dsyev_(&jobz, &uplo, &n, C, &n, W, work, &lwork, &info);
     lwork = (int)work[0];
     delete[] work;
 
@@ -219,7 +242,7 @@ int main(int argc, char **argv)
 
     // second call to dsyev_(), eigenvalues and eigenvectors are computed here
     // TODO: call dsyev here
-
+	dsyev_(&jobz, &uplo, &n, C, &n, W, work, &lwork, &info);
     t_elapsed += omp_get_wtime();
     std::cout << "DSYEV TIME=" << t_elapsed << " seconds\n";
     ///////////////////////////////////////////////////////////////////////////
@@ -235,6 +258,7 @@ int main(int argc, char **argv)
         for (int j = 0; j < npc; j++)
         {
             // TODO: compute the principal components
+            
         }
     }
 
