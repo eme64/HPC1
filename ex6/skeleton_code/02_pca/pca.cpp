@@ -16,7 +16,7 @@
 // $ module load mkl
 #include <mkl_lapack.h>
 
-
+bool my_debug = false;
 ///////////////////////////////////////////////////////////////////////////////
 // helpers
 double *read_gzfile(char *filename, int frows, int fcols, int rows, int cols)
@@ -129,6 +129,7 @@ int main(int argc, char **argv)
             A[i*m + j] = I[j*n+i];
         }
     }
+	if(my_debug)
    	for(int i=0;i<10; i++){
                 std::cout << "A[" << i << "] = " << A[i] << std::endl;
         } 
@@ -189,7 +190,7 @@ int main(int argc, char **argv)
 		A[i*m+j]/= AStd[i]; // normalize
         }
     }
-	
+	if(my_debug)
 	for(int i=0;i<10; i++){
                 std::cout << "AMean[" << i << "] = " << AMean[i] << std::endl;
 		std::cout << "AStd[" << i << "] = " << AStd[i] << std::endl;
@@ -217,6 +218,7 @@ int main(int argc, char **argv)
 			C[i*n+j]/=(double)(m-1);// divide matrix
 		}
 	}
+	if(my_debug)
 	for(int i=0;i<10; i++){
 		std::cout << "C[" << i << "] = " << C[i] << std::endl;
 	}
@@ -259,6 +261,7 @@ int main(int argc, char **argv)
     t_elapsed += omp_get_wtime();
     std::cout << "DSYEV TIME=" << t_elapsed << " seconds\n";
     ///////////////////////////////////////////////////////////////////////////
+	if(my_debug){
 	std::cout << "exit status: info = " << info << std::endl;
 	std::cout << "EVec of biggest EVal:"<< std::endl;
 	for(int i=0;i<10;i++){
@@ -267,6 +270,7 @@ int main(int argc, char **argv)
 	for(int i=0;i<10;i++){
                 std::cout << "D[" << n-i-1 << "]= " << W[n-i-1]<< std::endl;
         }
+	}
     ///////////////////////////////////////////////////////////////////////////
     // TODO: 5.
     t_elapsed = -omp_get_wtime();
@@ -285,10 +289,11 @@ int main(int argc, char **argv)
 		}
         }
     }
+	if(my_debug){
 	std::cout << "last line of PCReduced:" << std::endl;
 	for(int i=0;i<10;i++){
                 std::cout << "PCReduced["<<i<<"]= " << PCReduced[i+(m-1)*npc] << std::endl;
-        }
+        }}
 
     // TODO: Report the compression ratio
 	std::cout << std::endl << "------- compression ratio:" << std::endl;
@@ -326,6 +331,7 @@ int main(int argc, char **argv)
 		Z[i*n+j] += AMean[j];
         }
     }
+	if(my_debug)
 	for(int i=0;i<10;i++){
 		std::cout << "Z["<<i<<"]= " << Z[i] << std::endl;
 	}
