@@ -292,3 +292,175 @@ ratio: out/in = 0.0493164
 PCREDUCED TIME=33.6635 seconds
 OVERALL TIME=276.463 seconds
  - - ERROR: 227.322
+Sender: LSF System <lsfadmin@eu-c7-019-11>
+Subject: Job 52391929: <./pca_omp -m 9500 -n 9500 -npc 50 -if ../../data/earth.bin.gz -of ../../data/earth.50.txt> in cluster <euler> Done
+
+Job <./pca_omp -m 9500 -n 9500 -npc 50 -if ../../data/earth.bin.gz -of ../../data/earth.50.txt> was submitted from host <eu-login-07> by user <peterem> in cluster <euler> at Sat Nov  4 15:22:24 2017.
+Job was executed on host(s) <24*eu-c7-019-11>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Sat Nov  4 15:27:12 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex6/skeleton_code/02_pca> was used as the working directory.
+Started at Sat Nov  4 15:27:12 2017.
+Terminated at Sat Nov  4 16:23:47 2017.
+Results reported at Sat Nov  4 16:23:47 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./pca_omp -m 9500 -n 9500 -npc 50 -if ../../data/earth.bin.gz -of ../../data/earth.50.txt
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   3387.69 sec.
+    Max Memory :                                 2813 MB
+    Average Memory :                             1922.69 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               21763.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                4
+    Run time :                                   3421 sec.
+    Turnaround time :                            3683 sec.
+
+The output (if any) follows:
+
+MEAN/STD TIME=0.500863 seconds
+NORMAL. TIME=0.328349 seconds
+C-MATRIX TIME=1654.62 seconds
+DSYEV TIME=1514.71 seconds
+ratio: out/in = 0.0107368
+PCREDUCED TIME=132.44 seconds
+OVERALL TIME=3302.6 seconds
+ - - ERROR: 409.545
+Sender: LSF System <lsfadmin@eu-c7-005-11>
+Subject: Job 52391924: <./pca_omp -m 9500 -n 9500 -npc 100 -if ../../data/earth.bin.gz -of ../../data/earth.100.txt> in cluster <euler> Done
+
+Job <./pca_omp -m 9500 -n 9500 -npc 100 -if ../../data/earth.bin.gz -of ../../data/earth.100.txt> was submitted from host <eu-login-07> by user <peterem> in cluster <euler> at Sat Nov  4 15:22:06 2017.
+Job was executed on host(s) <24*eu-c7-005-11>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Sat Nov  4 15:26:13 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex6/skeleton_code/02_pca> was used as the working directory.
+Started at Sat Nov  4 15:26:13 2017.
+Terminated at Sat Nov  4 16:25:59 2017.
+Results reported at Sat Nov  4 16:25:59 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./pca_omp -m 9500 -n 9500 -npc 100 -if ../../data/earth.bin.gz -of ../../data/earth.100.txt
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   3593.20 sec.
+    Max Memory :                                 2817 MB
+    Average Memory :                             1935.75 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               21759.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                4
+    Run time :                                   3608 sec.
+    Turnaround time :                            3833 sec.
+
+The output (if any) follows:
+
+MEAN/STD TIME=0.377792 seconds
+NORMAL. TIME=0.329197 seconds
+C-MATRIX TIME=1689.83 seconds
+DSYEV TIME=1532.5 seconds
+ratio: out/in = 0.0212632
+PCREDUCED TIME=258.422 seconds
+OVERALL TIME=3481.46 seconds
+ - - ERROR: 293.817
+Sender: LSF System <lsfadmin@eu-c7-005-11>
+Subject: Job 52391966: <./pca_omp -m 4096 -n 4096 -npc 200 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.200.txt> in cluster <euler> Done
+
+Job <./pca_omp -m 4096 -n 4096 -npc 200 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.200.txt> was submitted from host <eu-login-07> by user <peterem> in cluster <euler> at Sat Nov  4 15:26:04 2017.
+Job was executed on host(s) <24*eu-c7-005-11>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Sat Nov  4 16:26:34 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex6/skeleton_code/02_pca> was used as the working directory.
+Started at Sat Nov  4 16:26:34 2017.
+Terminated at Sat Nov  4 16:32:47 2017.
+Results reported at Sat Nov  4 16:32:47 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./pca_omp -m 4096 -n 4096 -npc 200 -if ../../data/cyclone.bin.gz -of ../../data/cyclone.200.txt
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   370.74 sec.
+    Max Memory :                                 539 MB
+    Average Memory :                             385.46 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24037.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                4
+    Run time :                                   375 sec.
+    Turnaround time :                            4003 sec.
+
+The output (if any) follows:
+
+MEAN/STD TIME=0.0646963 seconds
+NORMAL. TIME=0.0711072 seconds
+C-MATRIX TIME=135.552 seconds
+DSYEV TIME=108.744 seconds
+ratio: out/in = 0.0981445
+PCREDUCED TIME=67.8716 seconds
+OVERALL TIME=312.304 seconds
+ - - ERROR: 108.564
+Sender: LSF System <lsfadmin@eu-c7-019-11>
+Subject: Job 52391961: <./pca_omp -m 9500 -n 9500 -npc 200 -if ../../data/earth.bin.gz -of ../../data/earth.200.txt> in cluster <euler> Done
+
+Job <./pca_omp -m 9500 -n 9500 -npc 200 -if ../../data/earth.bin.gz -of ../../data/earth.200.txt> was submitted from host <eu-login-07> by user <peterem> in cluster <euler> at Sat Nov  4 15:25:17 2017.
+Job was executed on host(s) <24*eu-c7-019-11>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Sat Nov  4 16:24:01 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex6/skeleton_code/02_pca> was used as the working directory.
+Started at Sat Nov  4 16:24:01 2017.
+Terminated at Sat Nov  4 17:28:00 2017.
+Results reported at Sat Nov  4 17:28:00 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./pca_omp -m 9500 -n 9500 -npc 200 -if ../../data/earth.bin.gz -of ../../data/earth.200.txt
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   3830.03 sec.
+    Max Memory :                                 2824 MB
+    Average Memory :                             1950.48 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               21752.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                4
+    Run time :                                   3850 sec.
+    Turnaround time :                            7363 sec.
+
+The output (if any) follows:
+
+MEAN/STD TIME=0.466775 seconds
+NORMAL. TIME=0.341259 seconds
+C-MATRIX TIME=1663.49 seconds
+DSYEV TIME=1521.43 seconds
+ratio: out/in = 0.0423158
+PCREDUCED TIME=528.806 seconds
+OVERALL TIME=3714.53 seconds
+ - - ERROR: 196.444
