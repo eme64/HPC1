@@ -1,0 +1,44 @@
+Sender: LSF System <lsfadmin@eu-c7-004-01>
+Subject: Job 52371978: <./lehmer_seq -N 4096> in cluster <euler> Done
+
+Job <./lehmer_seq -N 4096> was submitted from host <eu-login-01> by user <peterem> in cluster <euler> at Fri Nov  3 17:28:07 2017.
+Job was executed on host(s) <24*eu-c7-004-01>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Fri Nov  3 21:32:39 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex6/skeleton_code/01_lehmer> was used as the working directory.
+Started at Fri Nov  3 21:32:39 2017.
+Terminated at Fri Nov  3 21:34:29 2017.
+Results reported at Fri Nov  3 21:34:29 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./lehmer_seq -N 4096
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   108.75 sec.
+    Max Memory :                                 149 MB
+    Average Memory :                             144.50 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24427.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                4
+    Run time :                                   138 sec.
+    Turnaround time :                            14782 sec.
+
+The output (if any) follows:
+
+Init time = 0.257343 seconds
+Elapsed time = 108.601 seconds
+Largest Eigenvalues:
+all eigenvalues:
+1: 2232.13
+2: 665.848
+3: 316.64
+4: 184.61
+5: 120.805

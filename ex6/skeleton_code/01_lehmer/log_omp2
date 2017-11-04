@@ -1,0 +1,44 @@
+Sender: LSF System <lsfadmin@eu-c7-004-02>
+Subject: Job 52372197: <./lehmer_omp -N 8192> in cluster <euler> Done
+
+Job <./lehmer_omp -N 8192> was submitted from host <eu-login-01> by user <peterem> in cluster <euler> at Fri Nov  3 17:29:11 2017.
+Job was executed on host(s) <24*eu-c7-004-02>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Fri Nov  3 22:17:59 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex6/skeleton_code/01_lehmer> was used as the working directory.
+Started at Fri Nov  3 22:17:59 2017.
+Terminated at Fri Nov  3 22:34:44 2017.
+Results reported at Fri Nov  3 22:34:44 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./lehmer_omp -N 8192
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1000.94 sec.
+    Max Memory :                                 561 MB
+    Average Memory :                             551.18 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24015.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                4
+    Run time :                                   1029 sec.
+    Turnaround time :                            18333 sec.
+
+The output (if any) follows:
+
+Init time = 1.22918 seconds
+Elapsed time = 1001.47 seconds
+Largest Eigenvalues:
+all eigenvalues:
+1: 4463.98
+2: 1331.61
+3: 633.24
+4: 369.196
+5: 241.594
