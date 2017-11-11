@@ -77,7 +77,15 @@ void mm_mult_parallel(double C[N*N], double A[N*N], double B[N*N]) {
 		
 	}
 	*/
-	omp_set_num_threads(8);
+	//omp_set_num_threads(8);
+	
+	/*
+	#pragma omp parallel
+	{
+	#pragma omp single
+	printf("num threads%d\n",omp_get_num_threads());
+	}
+	*/
 	
 	#pragma omp parallel for
 	for (int i = 0; i < N; ++i) {
