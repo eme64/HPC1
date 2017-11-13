@@ -7,6 +7,7 @@
 
 #pragma once
 #include "Layers.h"
+#include <iostream>
 
 template<typename func>
 class NormalLayer: public Layer
@@ -42,18 +43,19 @@ class NormalLayer: public Layer
 
     //////// TODO: Implement prediction:
 	// computing output of neurons:
+	std::cout << "doing prediction..." << std::endl;
 	#pragma omp parallel for
-	{
+	
 		for(int j=0; j<nNeurons; j++){
 			// over all neurons
 			suminp[j] = 0;
 			for(int k=0; k<nInputs; k++){
-				// not sure about weight layout !
-				suminp[j]+= weight[j*nInputs + k] * inputs[k];
+				// not sure about weight layout, now more sure...
+				suminp[j]+= weight[j + nNeurons*k] * inputs[k];
 			}
 			
 		}
-	}
+	std::cout << "done." << std::endl;
 
     //////// TODO
 
@@ -75,9 +77,27 @@ class NormalLayer: public Layer
     // therefore array output already contains the Y's predicted by the net
 
     //////// TODO: Implement Oja's Rule:
-	// w(j, i+1) = w(j,i) + beta * y(j,i) ( x(i) - w(i) * y(j,i) - 2* sum( y(k, i) * w(k,i) ) )
-	// vec |        vec |   scal   scal     vec|   mat    scal     vec |   scal      vec |
+	// w(j, i+1) = w(j,i) + beta * y(j,i) ( x(i) - w_j(i) * y(j,i) - 2* sum( y(k, i) * w(k,i) ) )
+	// vec |        vec |   scal   scal     vec|   vec|    scal     vec |   scal      vec |
 	
+	//param[ID]->weights[o +nNeurons*i]
+	std::cout << "doing modified oja's rule..." << std::endl;
+	for(int j=nNeurons-1; j>=0;j--){// reverse order to not destroy lower j's
+		for(int i=0;i<nInputs;i++){// all entries of vector
+			Real locsum = 0;
+			
+			for(int k=0; k<j; k++){
+				locsum += output[k] * weight[k + i*nNeurons];
+			}
+			
+			weight[j + i*nNeurons] += learnRate * output[j] * (
+				inputs[i]
+				-weight[j + i*nNeurons] * output[j]
+				-2.0* locsum
+			);
+		}
+	}
+	std::cout << "done." << std::endl;
     //////// TODO
   }
 

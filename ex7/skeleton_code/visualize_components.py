@@ -5,12 +5,14 @@
 *  Copyright 2017 ETH Zurich. All rights reserved.
 *
 '''
-import os, pathlib, sys
+#import os, pathlib, sys
+import os, sys
+from pathlib import Path
 from glob import glob
 import numpy as np
 import matplotlib.pyplot as plt
 
-p = pathlib.Path('./')
+p = Path('./')
 for comp in list(p.glob('component_*.raw')):
     D = np.fromfile(comp.name, dtype=np.float32)
     D.resize([28, 28])
