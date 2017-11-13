@@ -1,0 +1,484 @@
+Sender: LSF System <lsfadmin@eu-c7-019-14>
+Subject: Job 52887948: <./exec_oja -N 24> in cluster <euler> Done
+
+Job <./exec_oja -N 24> was submitted from host <eu-login-02> by user <peterem> in cluster <euler> at Mon Nov 13 21:06:28 2017.
+Job was executed on host(s) <24*eu-c7-019-14>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Mon Nov 13 21:06:44 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex7/skeleton_code> was used as the working directory.
+Started at Mon Nov 13 21:06:44 2017.
+Terminated at Mon Nov 13 21:08:13 2017.
+Results reported at Mon Nov 13 21:08:13 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./exec_oja -N 24
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   2065.78 sec.
+    Max Memory :                                 216 MB
+    Average Memory :                             216.00 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24360.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                27
+    Run time :                                   92 sec.
+    Turnaround time :                            105 sec.
+
+The output (if any) follows:
+
+MNIST data directory: ../
+
+Normal Layer of sizes:
+Input:784 Output:10
+
+max threads: 24
+num threads: 1
+start propagation and learning...
+finish with: 86.7389 sec
+Sender: LSF System <lsfadmin@eu-c7-019-08>
+Subject: Job 52887963: <./exec_oja -N 16> in cluster <euler> Done
+
+Job <./exec_oja -N 16> was submitted from host <eu-login-02> by user <peterem> in cluster <euler> at Mon Nov 13 21:06:37 2017.
+Job was executed on host(s) <24*eu-c7-019-08>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Mon Nov 13 21:08:44 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex7/skeleton_code> was used as the working directory.
+Started at Mon Nov 13 21:08:44 2017.
+Terminated at Mon Nov 13 21:10:05 2017.
+Results reported at Mon Nov 13 21:10:05 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./exec_oja -N 16
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1227.26 sec.
+    Max Memory :                                 216 MB
+    Average Memory :                             216.00 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24360.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                19
+    Run time :                                   84 sec.
+    Turnaround time :                            208 sec.
+
+The output (if any) follows:
+
+MNIST data directory: ../
+
+Normal Layer of sizes:
+Input:784 Output:10
+
+max threads: 16
+num threads: 1
+start propagation and learning...
+finish with: 76.8242 sec
+Sender: LSF System <lsfadmin@eu-c7-019-16>
+Subject: Job 52887936: <./exec_oja -N 1> in cluster <euler> Done
+
+Job <./exec_oja -N 1> was submitted from host <eu-login-02> by user <peterem> in cluster <euler> at Mon Nov 13 21:06:19 2017.
+Job was executed on host(s) <24*eu-c7-019-16>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Mon Nov 13 21:06:44 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex7/skeleton_code> was used as the working directory.
+Started at Mon Nov 13 21:06:44 2017.
+Terminated at Mon Nov 13 21:11:00 2017.
+Results reported at Mon Nov 13 21:11:00 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./exec_oja -N 1
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   251.81 sec.
+    Max Memory :                                 214 MB
+    Average Memory :                             214.00 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24362.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                4
+    Run time :                                   259 sec.
+    Turnaround time :                            281 sec.
+
+The output (if any) follows:
+
+MNIST data directory: ../
+
+Normal Layer of sizes:
+Input:784 Output:10
+
+max threads: 1
+num threads: 1
+start propagation and learning...
+finish with: 250.988 sec
+Sender: LSF System <lsfadmin@eu-c7-065-10>
+Subject: Job 52887975: <./exec_oja -N 12> in cluster <euler> Done
+
+Job <./exec_oja -N 12> was submitted from host <eu-login-02> by user <peterem> in cluster <euler> at Mon Nov 13 21:06:46 2017.
+Job was executed on host(s) <24*eu-c7-065-10>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Mon Nov 13 21:10:44 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex7/skeleton_code> was used as the working directory.
+Started at Mon Nov 13 21:10:44 2017.
+Terminated at Mon Nov 13 21:11:49 2017.
+Results reported at Mon Nov 13 21:11:49 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./exec_oja -N 12
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   737.74 sec.
+    Max Memory :                                 215 MB
+    Average Memory :                             215.00 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24361.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                15
+    Run time :                                   91 sec.
+    Turnaround time :                            303 sec.
+
+The output (if any) follows:
+
+MNIST data directory: ../
+
+Normal Layer of sizes:
+Input:784 Output:10
+
+max threads: 12
+num threads: 1
+start propagation and learning...
+finish with: 61.4667 sec
+Sender: LSF System <lsfadmin@eu-c7-019-16>
+Subject: Job 52887991: <./exec_oja -N 10> in cluster <euler> Done
+
+Job <./exec_oja -N 10> was submitted from host <eu-login-02> by user <peterem> in cluster <euler> at Mon Nov 13 21:06:56 2017.
+Job was executed on host(s) <24*eu-c7-019-16>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Mon Nov 13 21:11:14 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex7/skeleton_code> was used as the working directory.
+Started at Mon Nov 13 21:11:14 2017.
+Terminated at Mon Nov 13 21:12:26 2017.
+Results reported at Mon Nov 13 21:12:26 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./exec_oja -N 10
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   687.76 sec.
+    Max Memory :                                 215 MB
+    Average Memory :                             215.00 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24361.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                13
+    Run time :                                   83 sec.
+    Turnaround time :                            330 sec.
+
+The output (if any) follows:
+
+MNIST data directory: ../
+
+Normal Layer of sizes:
+Input:784 Output:10
+
+max threads: 10
+num threads: 1
+start propagation and learning...
+finish with: 68.7726 sec
+Sender: LSF System <lsfadmin@eu-c7-065-10>
+Subject: Job 52888004: <./exec_oja -N 8> in cluster <euler> Done
+
+Job <./exec_oja -N 8> was submitted from host <eu-login-02> by user <peterem> in cluster <euler> at Mon Nov 13 21:07:04 2017.
+Job was executed on host(s) <24*eu-c7-065-10>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Mon Nov 13 21:12:14 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex7/skeleton_code> was used as the working directory.
+Started at Mon Nov 13 21:12:14 2017.
+Terminated at Mon Nov 13 21:13:16 2017.
+Results reported at Mon Nov 13 21:13:16 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./exec_oja -N 8
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   471.66 sec.
+    Max Memory :                                 215 MB
+    Average Memory :                             215.00 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24361.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                11
+    Run time :                                   84 sec.
+    Turnaround time :                            372 sec.
+
+The output (if any) follows:
+
+MNIST data directory: ../
+
+Normal Layer of sizes:
+Input:784 Output:10
+
+max threads: 8
+num threads: 1
+start propagation and learning...
+finish with: 58.8882 sec
+Sender: LSF System <lsfadmin@eu-c7-019-16>
+Subject: Job 52888015: <./exec_oja -N 6> in cluster <euler> Done
+
+Job <./exec_oja -N 6> was submitted from host <eu-login-02> by user <peterem> in cluster <euler> at Mon Nov 13 21:07:12 2017.
+Job was executed on host(s) <24*eu-c7-019-16>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Mon Nov 13 21:12:45 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex7/skeleton_code> was used as the working directory.
+Started at Mon Nov 13 21:12:45 2017.
+Terminated at Mon Nov 13 21:13:59 2017.
+Results reported at Mon Nov 13 21:13:59 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./exec_oja -N 6
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   428.95 sec.
+    Max Memory :                                 215 MB
+    Average Memory :                             215.00 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24361.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                9
+    Run time :                                   90 sec.
+    Turnaround time :                            407 sec.
+
+The output (if any) follows:
+
+MNIST data directory: ../
+
+Normal Layer of sizes:
+Input:784 Output:10
+
+max threads: 6
+num threads: 1
+start propagation and learning...
+finish with: 71.3835 sec
+Sender: LSF System <lsfadmin@eu-c7-054-03>
+Subject: Job 52888194: <./exec_oja -N 4> in cluster <euler> Done
+
+Job <./exec_oja -N 4> was submitted from host <eu-login-10> by user <peterem> in cluster <euler> at Mon Nov 13 21:09:23 2017.
+Job was executed on host(s) <24*eu-c7-054-03>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Mon Nov 13 21:13:45 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex7/skeleton_code> was used as the working directory.
+Started at Mon Nov 13 21:13:45 2017.
+Terminated at Mon Nov 13 21:15:06 2017.
+Results reported at Mon Nov 13 21:15:06 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./exec_oja -N 4
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   312.46 sec.
+    Max Memory :                                 214 MB
+    Average Memory :                             214.00 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24362.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                7
+    Run time :                                   93 sec.
+    Turnaround time :                            343 sec.
+
+The output (if any) follows:
+
+MNIST data directory: ../
+
+Normal Layer of sizes:
+Input:784 Output:10
+
+max threads: 4
+num threads: 1
+start propagation and learning...
+finish with: 77.9037 sec
+Sender: LSF System <lsfadmin@eu-c7-019-16>
+Subject: Job 52888206: <./exec_oja -N 2> in cluster <euler> Done
+
+Job <./exec_oja -N 2> was submitted from host <eu-login-10> by user <peterem> in cluster <euler> at Mon Nov 13 21:09:31 2017.
+Job was executed on host(s) <24*eu-c7-019-16>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Mon Nov 13 21:14:14 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex7/skeleton_code> was used as the working directory.
+Started at Mon Nov 13 21:14:14 2017.
+Terminated at Mon Nov 13 21:16:31 2017.
+Results reported at Mon Nov 13 21:16:31 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./exec_oja -N 2
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   269.45 sec.
+    Max Memory :                                 214 MB
+    Average Memory :                             214.00 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24362.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                5
+    Run time :                                   149 sec.
+    Turnaround time :                            420 sec.
+
+The output (if any) follows:
+
+MNIST data directory: ../
+
+Normal Layer of sizes:
+Input:784 Output:10
+
+max threads: 2
+num threads: 1
+start propagation and learning...
+finish with: 134.245 sec
+Sender: LSF System <lsfadmin@eu-c7-054-03>
+Subject: Job 52888222: <./exec_oja -N 1> in cluster <euler> Done
+
+Job <./exec_oja -N 1> was submitted from host <eu-login-10> by user <peterem> in cluster <euler> at Mon Nov 13 21:09:39 2017.
+Job was executed on host(s) <24*eu-c7-054-03>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Mon Nov 13 21:15:44 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex7/skeleton_code> was used as the working directory.
+Started at Mon Nov 13 21:15:44 2017.
+Terminated at Mon Nov 13 21:17:56 2017.
+Results reported at Mon Nov 13 21:17:56 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./exec_oja -N 1
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   131.91 sec.
+    Max Memory :                                 214 MB
+    Average Memory :                             214.00 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24362.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                4
+    Run time :                                   140 sec.
+    Turnaround time :                            497 sec.
+
+The output (if any) follows:
+
+MNIST data directory: ../
+
+Normal Layer of sizes:
+Input:784 Output:10
+
+max threads: 1
+num threads: 1
+start propagation and learning...
+finish with: 130.964 sec
+Sender: LSF System <lsfadmin@eu-c7-026-09>
+Subject: Job 52888836: <./exec_oja -N 3> in cluster <euler> Done
+
+Job <./exec_oja -N 3> was submitted from host <eu-login-10> by user <peterem> in cluster <euler> at Mon Nov 13 21:18:03 2017.
+Job was executed on host(s) <24*eu-c7-026-09>, in queue <normal.24h>, as user <peterem> in cluster <euler> at Mon Nov 13 21:21:12 2017.
+</cluster/home/peterem> was used as the home directory.
+</cluster/home/peterem/HPC1/ex7/skeleton_code> was used as the working directory.
+Started at Mon Nov 13 21:21:12 2017.
+Terminated at Mon Nov 13 21:22:47 2017.
+Results reported at Mon Nov 13 21:22:47 2017.
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./exec_oja -N 3
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   274.60 sec.
+    Max Memory :                                 214 MB
+    Average Memory :                             214.00 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               24362.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                6
+    Run time :                                   110 sec.
+    Turnaround time :                            284 sec.
+
+The output (if any) follows:
+
+MNIST data directory: ../
+
+Normal Layer of sizes:
+Input:784 Output:10
+
+max threads: 3
+num threads: 1
+start propagation and learning...
+finish with: 91.3565 sec

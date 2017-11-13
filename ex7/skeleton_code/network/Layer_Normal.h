@@ -43,7 +43,7 @@ class NormalLayer: public Layer
 
     //////// TODO: Implement prediction:
 	// computing output of neurons:
-	std::cout << "doing prediction..." << std::endl;
+	//std::cout << "doing prediction..." << std::endl;
 	#pragma omp parallel for
 	
 		for(int j=0; j<nNeurons; j++){
@@ -55,7 +55,7 @@ class NormalLayer: public Layer
 			}
 			
 		}
-	std::cout << "done." << std::endl;
+	//std::cout << "done." << std::endl;
 
     //////// TODO
 
@@ -80,24 +80,51 @@ class NormalLayer: public Layer
 	// w(j, i+1) = w(j,i) + beta * y(j,i) ( x(i) - w_j(i) * y(j,i) - 2* sum( y(k, i) * w(k,i) ) )
 	// vec |        vec |   scal   scal     vec|   vec|    scal     vec |   scal      vec |
 	
-	//param[ID]->weights[o +nNeurons*i]
-	std::cout << "doing modified oja's rule..." << std::endl;
-	for(int j=nNeurons-1; j>=0;j--){// reverse order to not destroy lower j's
+	// problem will be that some want to access old weights that are already overwritten -> first make old_copy:
+	Real old_weight [nNeurons * nInputs];
+	#pragma omp parallel for collapse(2)
+	for(int i=0;i<nInputs; i++){
+		for(int k=0; k<nNeurons;k++){
+			old_weight[k + i*nNeurons] = weight[k + i+nNeurons];
+		}
+	}
+	
+	// guided schedule because for bigger j the sum over k will be bigger
+	#pragma omp parallel for collapse(2) schedule(guided) 
+	for(int j=0; j<nNeurons;j++){// reverse order to not destroy lower j's
 		for(int i=0;i<nInputs;i++){// all entries of vector
 			Real locsum = 0;
 			
 			for(int k=0; k<j; k++){
-				locsum += output[k] * weight[k + i*nNeurons];
+				locsum += output[k] * old_weight[k + i*nNeurons];
 			}
 			
-			weight[j + i*nNeurons] += learnRate * output[j] * (
+			weight[j + i*nNeurons] = old_weight[j + i*nNeurons] + learnRate * output[j] * (
 				inputs[i]
-				-weight[j + i*nNeurons] * output[j]
+				-old_weight[j + i*nNeurons] * output[j]
 				-2.0* locsum
 			);
 		}
 	}
-	std::cout << "done." << std::endl;
+
+	/* ---------- sequential code.
+	for(int j=nNeurons-1; j>=0;j--){// reverse order to not destroy lower j's
+                for(int i=0;i<nInputs;i++){// all entries of vector
+                        Real locsum = 0;
+
+                        for(int k=0; k<j; k++){
+                                locsum += output[k] * weight[k + i*nNeurons];
+                        }
+
+                        weight[j + i*nNeurons] += learnRate * output[j] * (
+                                inputs[i]
+                                -weight[j + i*nNeurons] * output[j]
+                                -2.0* locsum
+                        );
+                }
+        }
+	*/
+	//std::cout << "done." << std::endl;
     //////// TODO
   }
 

@@ -8,6 +8,7 @@
 #include "network/Optimizer.h"
 #include "mnist/mnist_reader.hpp"
 #include <chrono>
+#include <iostream>
 
 // map from grayscale [0, 255] to Real [0, 1]
 static void prepare_input(const std::vector<int>& image, std::vector<Real>& input)
@@ -38,7 +39,19 @@ inline int test_dir()
 
 int main (int argc, char** argv)
 {
-  std::cout << "MNIST data directory: ../" << std::endl;
+  
+	
+	int nthreads = 24;
+	for(int i = 1; i < argc; i++ ) {
+        	if( strcmp( argv[i], "-N" ) == 0 ) {
+         	   nthreads = atoi(argv[i+1]);
+         	   i++;
+        	}
+    	}
+	
+	omp_set_num_threads(nthreads);
+	
+	std::cout << "MNIST data directory: ../" << std::endl;
   if (test_dir()) {
     printf("Missing MNIST data, aborting... \n");
     abort();
@@ -70,7 +83,11 @@ int main (int argc, char** argv)
       return dist(gen);
     }
   } generator;
-
+	std::cout << "max threads: " << omp_get_max_threads() << std::endl;	
+	std::cout << "num threads: " << omp_get_num_threads() << std::endl;
+	std::cout << "start propagation and learning..." << std::endl;
+	double ti1 = omp_get_wtime();
+	
   for (int iepoch = 0; iepoch < nepoch; iepoch++)
   {
     std::vector<Real> input(28*28, 0);
@@ -86,6 +103,9 @@ int main (int argc, char** argv)
       net.hebbian_learning(learn_rate);
     }
   }
+	
+	double ti2 = omp_get_wtime();
+	std::cout << "finish with: " << ti2-ti1 << " sec" << std::endl;
 
   //extract features from the second layer (not implemented for the first layer)
   // WARNING: if you add layers to the net this will fail!
