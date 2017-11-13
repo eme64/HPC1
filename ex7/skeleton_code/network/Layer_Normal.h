@@ -41,7 +41,19 @@ class NormalLayer: public Layer
           Real* const output = act[ID]->outvals; //size is nNeurons
 
     //////// TODO: Implement prediction:
-
+	// computing output of neurons:
+	#pragma omp parallel for
+	{
+		for(int j=0; j<nNeurons; j++){
+			// over all neurons
+			suminp[j] = 0;
+			for(int k=0; k<nInputs; k++){
+				// not sure about weight layout !
+				suminp[j]+= weight[j*nInputs + k] * inputs[k];
+			}
+			
+		}
+	}
 
     //////// TODO
 
@@ -63,8 +75,9 @@ class NormalLayer: public Layer
     // therefore array output already contains the Y's predicted by the net
 
     //////// TODO: Implement Oja's Rule:
-
-
+	// w(j, i+1) = w(j,i) + beta * y(j,i) ( x(i) - w(i) * y(j,i) - 2* sum( y(k, i) * w(k,i) ) )
+	// vec |        vec |   scal   scal     vec|   mat    scal     vec |   scal      vec |
+	
     //////// TODO
   }
 
