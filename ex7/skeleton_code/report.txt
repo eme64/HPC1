@@ -12,4 +12,4 @@ Scaling (log_oja contains the log-file from execution)
 16  76.8242 sec
 24  86.7389 sec
 
-![My image](username.github.com/repository/img/image.jpg)
+for plot see: scaling_oja.jpg
