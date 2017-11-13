@@ -1,0 +1,15 @@
+some comments already in code (load imballance ...)
+
+Scaling (log_oja contains the log-file from execution)
+1   250.988 sec
+2   134.245 sec
+3   91.3565 sec
+4   77.9037 sec
+6   71.3835 sec
+8   58.8882 sec
+10  68.7726 sec
+12  61.4667 sec
+16  76.8242 sec
+24  86.7389 sec
+
+![My image](username.github.com/repository/img/image.jpg)
