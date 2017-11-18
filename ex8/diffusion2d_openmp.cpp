@@ -143,17 +143,17 @@ int main(int argc, char* argv[])
     t.start();
     for (int step = 0; step < 10000; ++step) {
         system.advance();
-#ifndef _PERF_
+//#ifndef _PERF_
         system.compute_diagnostics(dt * step);
-#endif
+//#endif
     }
     t.stop();
 
     std::cout << "Timing: " << N << ' ' << t.get_timing() << '\n';
 
-#ifndef _PERF_
+//#ifndef _PERF_
     system.write_diagnostics("diagnostics_openmp.dat");
-#endif
+//#endif
 
     return 0;
 }

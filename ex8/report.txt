@@ -1,0 +1,14 @@
+I must have some bug, probably in initialisation, because the energy already starts bad.
+But otherwise the behaviour is similar I guess?
+
+------------------ d)
+
+Now each processor has to do update the boundary which is generall 2*N, and this regardles of the number of processors. But as the number increases the area shrinks, so also should the boundary.
+
+Optimal would be Squares which have a minimal circumferance per area for rectangles (other shapes would really neither be efficient nor practical).
+
+Assuming we can make the area into perfect squares we get:
+
+4*side = 4* (N/sqrt(p))
+
+Already with 4 processors each one will not have more than 2N boundary positions (this including the outward boundary that does not even have to be computed)
