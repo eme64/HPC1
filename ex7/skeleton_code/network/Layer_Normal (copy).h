@@ -7,6 +7,7 @@
 
 #pragma once
 #include "Layers.h"
+#include <iostream>
 
 template<typename func>
 class NormalLayer: public Layer
@@ -167,9 +168,6 @@ class NormalLayer: public Layer
 			gradW[j + i*nNeurons] = deltas[j] * inputs[i];
 		}
 	}
-	
-	// something went wrong, not sure what.
-	// hence cannot really do b) ...
 	
     //////// TODO
   }
