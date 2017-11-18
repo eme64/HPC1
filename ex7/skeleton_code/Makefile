@@ -3,7 +3,7 @@ config ?= debug
 ifeq ($(shell uname -s), Darwin)
 CC=gcc-7
 else
-CC=gcc
+CC=g++  #gcc
 endif
 
 

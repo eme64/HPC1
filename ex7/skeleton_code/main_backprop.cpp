@@ -8,6 +8,7 @@
 #include "network/Optimizer.h"
 #include "mnist/mnist_reader.hpp"
 #include <chrono>
+#include <iostream>
 
 // map from grayscale [0, 255] to Real [0, 1]
 static void prepare_input(const std::vector<int>& image, std::vector<Real>& input)
