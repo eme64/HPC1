@@ -60,4 +60,22 @@ with tf.Session() as sess:
     if i % 10 == 0:
       err = loss.eval(feed_dict={x:mnist.test.images})/test_size
       print('test error %g' % err)
-
+  
+  W_eval = W_fc2.eval()# retrieve from tf
+  b_eval = b_fc2.eval()
+  b_eval = np.reshape(b_eval, (784, 1))
+  
+  print("<><><><>")
+  for i in range(0,10):
+    print('saving %g' % i)
+    ei = np.zeros((10,1)) ## unit vector
+    ei[i, 0] = 1.0
+    print(W_eval.shape)
+    print(ei.shape)
+    print(b_eval.shape)
+    result = np.dot(W_eval.T, ei) + b_eval
+    result = np.reshape(result, (28, 28)) # put image on screen
+    print(result.shape)
+    plt.imshow(result)
+    plt.show()
+    
