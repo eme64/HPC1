@@ -255,7 +255,9 @@ public:
 	// naive approach: simple send, iterate to receive
 	// a first improvement would be to package the 3 sends/recv into a struct, send the bytes
 	// a possibly better approach would be to gather the data, then compute the max.
-	// it would cut down the communication overhead from O(n) to O(log n)
+	// or do it via a reduction: that is simple if we only want the max,
+	// if we also want the position then we would have to do something more 
+	// gather or reduction would cut down the communication overhead from O(n) to O(log n)
 	
 	if(rank_>0)
 	{
