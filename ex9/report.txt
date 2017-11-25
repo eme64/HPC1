@@ -1,0 +1,14 @@
+----------------------  Question 1:
+
+Blocking receive makes sense, we can only do work once we receive the input.
+
+But 'MPI_Send' can be blocking. It might not be for small values, but if it is it has bad consequences here.
+If one of the other processes starts lagging behind, then the process 0 will have to wait until it is done. Only then can it serve the other processes that are simply waiting.
+Since they are blocking they cannot even do something else.
+
+But even worse: The process 0 will be sending messages to itself.
+If this is blocking in both operations this will just end in a deadlock in the first iteration.
+
+One solution would be to let process 0 send out asynchronously.
+Then it can continue right away.
+This way the dependencies between the processes is minimized, they can all receive new inputs as they like. (Provided the process 0 has already sent all these messages).
