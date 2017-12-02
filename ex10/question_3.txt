@@ -1,0 +1,23 @@
+#pragma omp parallel num_threads(2)
+{
+	
+	if(omp_getthread_num()==0)
+	{
+		work();
+	}
+	else
+	{
+		MPI_barrier(MPI_COMM_WORLD);
+	}
+	
+}
+// the implicit OMP barrier will see that at the end of the block the two are synched!
+
+
+/*
+-------------- requirements
+
+there might be issues if work() also makes MPI-communications, as the MPI_barrier does.
+this will require that we have MPI_MODE_MULTIPLE !
+
+*/

@@ -134,8 +134,44 @@ public:
     
     void write_density_mpi(char *filename) const
     {
+    	//std::cout << "ok... " << rank_ << std::endl;
         // TODO: add your MPI I/O code here
-
+        
+	MPI_File fh;
+	MPI_File_open(MPI_COMM_WORLD, filename, MPI_MODE_WRONLY | MPI_MODE_CREATE, MPI_INFO_NULL, &fh);
+	MPI_Offset base;
+	MPI_File_set_size(fh, 0);
+	MPI_File_get_position(fh, &base); // will be zero
+	
+	//std::cout << "open size " << Ntot << ", " << rank_ << std::endl;
+	
+	// calculate local size
+	MPI_Offset local_size = Ntot;
+	
+	// calculate total size
+	MPI_Offset total_size = 0;
+	MPI_Allreduce(&local_size, &total_size, 1, MPI_OFFSET, MPI_SUM, MPI_COMM_WORLD);
+	
+	MPI_File_preallocate(fh, total_size*sizeof(double));
+	
+	//std::cout << "reduced-exscan " << total_size << ", "  << rank_ << std::endl;
+	
+	// get offset for me
+	MPI_Offset offset = 0;
+	MPI_Exscan(&local_size, &offset, 1, MPI_OFFSET, MPI_SUM, MPI_COMM_WORLD);
+	
+	//std::cout << "write at " << offset << ", " << rank_ << std::endl;
+	
+	// for now we write it all, including all the ghost-cells, should be removed!
+	// how to do:
+	// write line by line, without first and last, without sides -> need change local size!
+	
+	MPI_Status status;
+	MPI_File_write_at_all(fh, base + offset, &rho_[0], Ntot, MPI_DOUBLE, &status);
+	
+	MPI_File_close(&fh);
+	
+	//std::cout << "done " << rank_ << std::endl;
     }
 
   
