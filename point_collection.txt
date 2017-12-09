@@ -15,13 +15,28 @@ biases missing again -> rest did not work.
 missing because a) did not work
 3) 3/3
 
-ex8:
+ex8:  34 / 48
 1a) 0 / 5
 1b) 0 / 5
 due to unclear slides (confusion about problem size, input size, problem complexity)
 Now I understand weak scaling as depending on problem complexity, not imput size !
-2a) 
-.... continue here !
+2a) 12/14
+offset mistake -1
+worked with old template -> used N_ istead of real_N_ -1
+2b) 12 / 12
+difference of N_ and real_N_ again, but technically works
+could of course leave away ghost cells at sides, but only minor overhead
+2c) 4/6
+used rho_tmp_ instead of rho_ -1
+implemented reduction instead of using it -1
+2d) 6/6
 
 ex9:
+1) 8/9
+forgot to mention copying buffers for issued send! -1
+2a) 7/8
+did not use hint about MPI_REQUEST_NULL -> solution more convoluted but still correct
+2b) 17/22
+implemented reduce (naively) instead of using an MPI_Gather or MPI_Reduce -5
+
 ex10:
