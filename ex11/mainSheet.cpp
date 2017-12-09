@@ -40,6 +40,9 @@ N=3162
 See plot in file:
 x axis is p, y axis is time
 
+saving works, except for the single-rank save... strange.
+I did not include the images for file size reasons.
+
 */
 
 using namespace std;
