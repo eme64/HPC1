@@ -3,3 +3,25 @@ ex3: 17 / 17
 ex4: 42 / 44
 ex5: 10 / 11
 ex6: 18 / 22
+
+ex7: 15.5 / 25
+1a) 6.5 / 8
+missed bias everywhere (-2)
+1b) 4 / 4
+
+2a) 2 / 6
+biases missing again -> rest did not work.
+2b) 0 / 4
+missing because a) did not work
+3) 3/3
+
+ex8:
+1a) 0 / 5
+1b) 0 / 5
+due to unclear slides (confusion about problem size, input size, problem complexity)
+Now I understand weak scaling as depending on problem complexity, not imput size !
+2a) 
+.... continue here !
+
+ex9:
+ex10:
