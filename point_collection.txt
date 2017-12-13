@@ -39,4 +39,12 @@ did not use hint about MPI_REQUEST_NULL -> solution more convoluted but still co
 2b) 17/22
 implemented reduce (naively) instead of using an MPI_Gather or MPI_Reduce -5
 
-ex10:
+ex10: 25 / 26
+1) 7/7
+did not do anything about ghost cells, but mentioned they could be left out.
+2a) 12/12
+2b) 3/7
+MPI_Init_thread in comments, but not code -2
+3) 3 / 4 bonus
+omp_set_dynamic(0) missing -1
+thread safety was mentioned (even if not implemented)
