@@ -1,3 +1,12 @@
+Exercise ID | Grade | Comments
+:-----------|:----- |:--------
+07          | 4.75  |
+08          | 5.00  |
+09          | 5.50  |
+10          | 5.75  |
+11          | 5.75  |
+
+
 ex2: 35 / 41
 ex3: 17 / 17
 ex4: 42 / 44
@@ -31,7 +40,7 @@ used rho_tmp_ instead of rho_ -1
 implemented reduction instead of using it -1
 2d) 6/6
 
-ex9:
+ex9: 32/39
 1) 8/9
 forgot to mention copying buffers for issued send! -1
 2a) 7/8
@@ -48,3 +57,17 @@ MPI_Init_thread in comments, but not code -2
 3) 3 / 4 bonus
 omp_set_dynamic(0) missing -1
 thread safety was mentioned (even if not implemented)
+
+ex11: 18/20
+1a) 0/3
+1b) 2/2
+1c) 3/3
+I used allreduce, that is maybe not optimal, but still works
+1d) 2/2
+1e) 5/5
+but eehrm sorry, the master solution is really a bit too much capsulated.
+Makes it hard to compare solutions...
+1f) 4/5
+some minor bug that prevented the saving for the case (i) to work properly -1
+1g) 2/4 (extra)
+got some reasonable measurements, but did not do the speedup plot properly
